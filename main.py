@@ -29,9 +29,9 @@ class MapParams(object):
             W = 600  # Ширина экрана в пикселях
             return 360 / (2 ** (self.zoom + 8)) * W
 
-        if event.key == pygame.K_1 and self.zoom < 17:
+        if event.key == pygame.K_PAGEUP and self.zoom < 17:
             self.zoom += 1
-        elif event.key == pygame.K_2 and self.zoom > 2:
+        elif event.key == pygame.K_PAGEDOWN and self.zoom > 2:
             self.zoom -= 1
         elif event.key == pygame.K_LEFT:
             self.lon = max(self.lon - count_longitude_delta(), -180)
@@ -138,7 +138,7 @@ def main():
                                                        text='Административная',
                                                        manager=manager)
     text_input = pygame_gui.elements.UITextEntryLine(relative_rect=pygame.Rect((600, 210), (200, 50)),
-                                                     manager=manager)
+                                                     manager=manager, placeholder_text='Введите адрес')
     text_output = pygame_gui.elements.UITextBox(relative_rect=pygame.Rect((600, 310), (200, 100)),
                                                 manager=manager, html_text='')
     reset_button = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((600, 260), (200, 50)),
