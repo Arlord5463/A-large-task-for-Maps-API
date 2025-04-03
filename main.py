@@ -1,6 +1,6 @@
 import math
 
-import pygame, pygame_gui, requests, sys, os
+import pygame, pygame_gui, requests, sys
 from consts import *
 
 
