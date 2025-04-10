@@ -61,6 +61,7 @@ class MapParams(object):
         self.lon, self.lat = \
             json_response["response"]["GeoObjectCollection"]["featureMember"][0]["GeoObject"]["Point"][
                 "pos"].split()
+        self.lon, self.lat = float(self.lon), float(self.lat)
         # Ставим метку
         self.pt = f"{self.lon},{self.lat},pm2pnm"
         # Записываем адрес
